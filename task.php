@@ -4,12 +4,11 @@
 Validate that the subject is a German zip code.
 German zip codes consist of 5 digits.
 */
-$pattern = '(^\\d)';
+$pattern = '()';
 
-/* DO NOT CHANGE */
 $subjects = [
-  '1. match' => TRUE, '2. match' => TRUE, '42' => TRUE,
-  'not a match' => FALSE, "number at the end 2" => FALSE
+  '01234' => TRUE, '50670' => TRUE, '40213' => TRUE,
+  'abcdef' => FALSE, "50670\n" => FALSE, "123456" => FALSE
 ];
 foreach ($subjects as $subject => $shouldMatch) {
   if ($shouldMatch == preg_match($pattern, $subject)) {
