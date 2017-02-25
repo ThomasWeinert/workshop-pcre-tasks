@@ -1,15 +1,15 @@
 <?php
 
 /*
-Validate that the subject a hexadecimal byte.
-It should be two characters. Digits and letters
-between a and f are allowed. The letters can be uppercase.
+Validate that the input is an integer.
+The leading sign is optional.
 */
 $pattern = '()';
 
 $subjects = [
-  '01' => TRUE, '0f' => TRUE, 'FA' => TRUE,
-  'az' => FALSE, "foo" => FALSE, "123" => FALSE
+  '1' => TRUE, '123' => TRUE,
+  '+123' => TRUE, '-456' => TRUE,
+  '1.1' => FALSE, "abc" => FALSE, "123 456" => FALSE
 ];
 foreach ($subjects as $subject => $shouldMatch) {
   if ($shouldMatch == preg_match($pattern, $subject)) {
