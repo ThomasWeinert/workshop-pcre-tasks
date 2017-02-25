@@ -1,11 +1,14 @@
 <?php
 
-/* Define the pattern argument */
+/*
+Define the pattern argument to match xxXxxXxxxx,
+x representing a digit, X a non-digit.
+*/
 $pattern = '()';
 
 /* DO NOT CHANGE */
 $result = preg_match_all(
-  $pattern, "ab.cd.ef.gh\na\n.b\n.d\n.e\n\nabcdefghiklm", $matches
+  $pattern, "12.34.5678\n123456789\nab.cd.efgh", $matches
 );
 if ($result && count($matches[0]) == 1) {
   echo 'SUCCESS';
