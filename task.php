@@ -1,14 +1,14 @@
 <?php
 
 /*
-Validate that the subject start with a digit.
+Validate that the subject ends with a digit.
 */
 $pattern = '()';
 
 /* DO NOT CHANGE */
 $subjects = [
-  '1. match' => TRUE, '2. match' => TRUE, '42' => TRUE,
-  'not a match' => FALSE, "a 345 b" => FALSE,  "end 3" => FALSE
+  'match 1' => TRUE, 'match 2' => TRUE, '42' => TRUE, "21\n" => TRUE,
+  'not a match' => FALSE, "a 345 b" => FALSE,  "3 start" => FALSE
 ];
 foreach ($subjects as $subject => $shouldMatch) {
   if ($shouldMatch == preg_match($pattern, $subject)) {
