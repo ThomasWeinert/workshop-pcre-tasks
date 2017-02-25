@@ -1,11 +1,11 @@
 <?php
 
 /* Define the pattern argument */
-$pattern = '';
+$pattern = '()';
 
 /* DO NOT CHANGE */
 $result = preg_match_all($pattern, 'https://nevercodealone.de', $matches);
-if ($result && count($matches[0]) == 1) {
+if ($result && count($matches[0]) == 8) {
   echo 'SUCCESS';
 } else {
   echo 'FAIL';
