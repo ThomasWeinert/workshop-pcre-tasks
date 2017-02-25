@@ -1,17 +1,20 @@
 <?php
 
 /*
-Define the pattern argument to match xxXxxXxxxx,
-x representing a digit, X a non-digit.
+Validate that the subject is a German zip code.
+German zip codes consist of 5 digits.
 */
-$pattern = '()';
+$pattern = '(^\\d)';
 
 /* DO NOT CHANGE */
-$result = preg_match_all(
-  $pattern, "12.34.5678\n123456789\nab.cd.efgh", $matches
-);
-if ($result && count($matches[0]) == 1) {
-  echo 'SUCCESS';
-} else {
-  echo 'FAIL';
+$subjects = [
+  '1. match' => TRUE, '2. match' => TRUE, '42' => TRUE,
+  'not a match' => FALSE, "number at the end 2" => FALSE
+];
+foreach ($subjects as $subject => $shouldMatch) {
+  if ($shouldMatch == preg_match($pattern, $subject)) {
+    echo "SUCCESS\n";
+  } else {
+    echo "FAIL\n";
+  }
 }
