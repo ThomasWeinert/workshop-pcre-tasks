@@ -1,7 +1,7 @@
 <?php
 
 /* Define the pattern argument */
-$pattern = '(\pL)u';
+$pattern = '()';
 
 $result = preg_match_all(
   $pattern, 'English, Русский, 中文', $matches
