@@ -1,15 +1,14 @@
 <?php
 
 /*
-Validate contains 3 or more consecutive "ugh"s.
+Validate strings that consist of the any count of same digit (11, 444, ...)
 */
 $pattern = '()';
 
 /* DO NOT CHANGE */
 $subjects = [
-  'ughughugh' => TRUE, 'ughughughugh' => TRUE,
-  'ughugahugh' => FALSE, "ughughugah" => FALSE,
-  "ughughughugah" => TRUE
+  '7' => TRUE, '11' => TRUE, '444' => TRUE, '8888' => TRUE,
+  '12' => FALSE, "456" => FALSE, "ugh" => FALSE
 ];
 foreach ($subjects as $subject => $shouldMatch) {
   if ($shouldMatch == preg_match($pattern, $subject)) {
