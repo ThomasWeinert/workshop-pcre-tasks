@@ -1,15 +1,15 @@
 <?php
 
 /*
-Validate contains 3 or more consecutive "ugh"s.
+Validate strings that start with a title ('Mr.', 'Ms.', 'Mrs.'),
+followed by a space and a string that contains at least one letter.
 */
 $pattern = '()';
 
 /* DO NOT CHANGE */
 $subjects = [
-  'ughughugh' => TRUE, 'ughughughugh' => TRUE,
-  'ughugahugh' => FALSE, "ughughugah" => FALSE,
-  "ughughughugah" => TRUE
+  'Mr. Doe' => TRUE, 'Mrs. Jane Doe' => TRUE, 'Ms. Marple' => TRUE,
+  'Mr. ' => FALSE, "Mrs. 1" => FALSE, "1. Mr. Doe" => FALSE
 ];
 foreach ($subjects as $subject => $shouldMatch) {
   if ($shouldMatch == preg_match($pattern, $subject)) {
