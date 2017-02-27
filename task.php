@@ -1,14 +1,15 @@
 <?php
 
 /*
-Validate strings that consist of the any count of same digit (11, 444, ...)
+Validate that the string is an IpV4.
 */
 $pattern = '()';
 
 /* DO NOT CHANGE */
 $subjects = [
-  '7' => TRUE, '11' => TRUE, '444' => TRUE, '8888' => TRUE,
-  '12' => FALSE, "456" => FALSE, "ugh" => FALSE
+  '127.0.0.1' => TRUE, '0.0.0.0' => TRUE,
+  '255.255.255.0' => TRUE, '1.1.1.256' => FALSE,
+  "1.1.1.a" => FALSE, "-1.1.1.1" => FALSE
 ];
 foreach ($subjects as $subject => $shouldMatch) {
   if ($shouldMatch == preg_match($pattern, $subject)) {
