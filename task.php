@@ -1,14 +1,15 @@
 <?php
 
 /*
-Validate that the subject starta with a digit.
+Validate contains 3 or more consecutive "ugh"s.
 */
 $pattern = '()';
 
 /* DO NOT CHANGE */
 $subjects = [
-  '1. match' => TRUE, '2. match' => TRUE, '42' => TRUE,
-  'no match' => FALSE, "a 345 b" => FALSE, "end 3" => FALSE
+  'ughughugh' => TRUE, 'ughughughugh' => TRUE,
+  'ughugahugh' => FALSE, "ughughugah" => FALSE,
+  "ughughughugah" => TRUE
 ];
 foreach ($subjects as $subject => $shouldMatch) {
   if ($shouldMatch == preg_match($pattern, $subject)) {
