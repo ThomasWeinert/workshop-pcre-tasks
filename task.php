@@ -8,9 +8,10 @@ $pattern = '()';
 /* DO NOT CHANGE */
 if (
   preg_match($pattern, '2017-02-27', $match) &&
-  (isset($match['year']) && $match['year'] == '2017') &&
-  (isset($match['month']) && $match['month'] == '02') &&
-  (isset($match['day']) && $match['day'] == '27')
+  isset($match['year'], $match['month'], $match['day']) &&
+  $match['year'] === '2017' &&
+  $match['month'] === '02' &&
+  $match['day'] === '27'
 ) {
   echo "SUCCESS\n";
 } else {
