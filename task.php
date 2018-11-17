@@ -1,6 +1,6 @@
 <?php
 
-/* Define the pattern argument */
+/* Match the string "nevercodealone". */
 $pattern = '';
 
 /* DO NOT CHANGE */
