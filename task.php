@@ -9,10 +9,10 @@ $pattern = '()';
 
 $subjects = [
   '01' => TRUE, '0f' => TRUE, 'FA' => TRUE,
-  'az' => FALSE, "foo" => FALSE, "123" => FALSE
+  'az' => FALSE, 'foo' => FALSE, '123' => FALSE
 ];
 foreach ($subjects as $subject => $shouldMatch) {
-  if ($shouldMatch == preg_match($pattern, $subject)) {
+  if ($shouldMatch === (bool)\preg_match($pattern, $subject)) {
     echo "SUCCESS\n";
   } else {
     echo "FAIL\n";
