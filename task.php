@@ -8,10 +8,10 @@ $pattern = '()';
 /* DO NOT CHANGE */
 $subjects = [
   '7' => TRUE, '11' => TRUE, '444' => TRUE, '8888' => TRUE,
-  '12' => FALSE, "456" => FALSE, "ugh" => FALSE
+  '12' => FALSE, '456' => FALSE, 'ugh' => FALSE
 ];
 foreach ($subjects as $subject => $shouldMatch) {
-  if ($shouldMatch == preg_match($pattern, $subject)) {
+  if ($shouldMatch === (bool)\preg_match($pattern, $subject)) {
     echo "SUCCESS\n";
   } else {
     echo "FAIL\n";
