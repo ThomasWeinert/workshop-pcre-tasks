@@ -1,7 +1,7 @@
 <?php
 
 /*
-Validate that the subject starta with a digit.
+Validate that the subject starts with a digit.
 */
 $pattern = '()';
 
