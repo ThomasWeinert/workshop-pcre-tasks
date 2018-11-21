@@ -11,7 +11,7 @@ $subjects = [
   'abcdef' => FALSE, "50670\n" => FALSE, '123456' => FALSE
 ];
 foreach ($subjects as $subject => $shouldMatch) {
-  if ($shouldMatch === (bool)preg_match($pattern, $subject)) {
+  if ($shouldMatch === (bool)\preg_match($pattern, $subject)) {
     echo "SUCCESS\n";
   } else {
     echo "FAIL\n";
