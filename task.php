@@ -7,7 +7,7 @@ $pattern = '()';
 
 /* DO NOT CHANGE */
 if (
-  preg_match($pattern, '2017-02-27', $match) &&
+  \preg_match($pattern, '2017-02-27', $match) &&
   isset($match['year'], $match['month'], $match['day']) &&
   $match['year'] === '2017' &&
   $match['month'] === '02' &&
