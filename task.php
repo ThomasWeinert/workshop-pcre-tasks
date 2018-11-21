@@ -1,7 +1,7 @@
 <?php
 
 /*
-Validate contains 3 or more consecutive "ugh"s.
+Check that the subject contains 3 or more consecutive "ugh"s.
 */
 $pattern = '()';
 
@@ -12,7 +12,7 @@ $subjects = [
   "ughughughugah" => TRUE
 ];
 foreach ($subjects as $subject => $shouldMatch) {
-  if ($shouldMatch === (bool)preg_match($pattern, $subject)) {
+  if ($shouldMatch === (bool)\preg_match($pattern, $subject)) {
     echo "SUCCESS\n";
   } else {
     echo "FAIL\n";
